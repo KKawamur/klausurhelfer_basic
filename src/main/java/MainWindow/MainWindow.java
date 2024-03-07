@@ -1,6 +1,6 @@
 package MainWindow;
 
-import Panels.Graphen.LineareFunktionenMidPanel;
+import Panels.Graphen.MidPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +22,7 @@ public class MainWindow extends JFrame {
                 }
                 case "Lineare Funktion":{
                     remove(midPanel);
-                    midPanel = new LineareFunktionenMidPanel();
+                    midPanel = new MidPanel();
                     add(midPanel);
                     setSize(1280,720);
                     break;
