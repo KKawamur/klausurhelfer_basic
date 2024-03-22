@@ -1,6 +1,6 @@
 package MainWindow;
 
-import Panels.Graphen.MidPanel;
+import Panels.Graphen.MidPanel.MidPanel;
 
 import javax.swing.*;
 import java.awt.*;
