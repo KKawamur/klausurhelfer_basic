@@ -1,11 +1,14 @@
 package Funktionen;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Polynom {
     private double a;
     private double exp;
 
     public Polynom(double a, double exp){
-        this.a = a;
+        this.a = round(a, 3);
         if (exp < 0)
             this.exp = 0;
         else
@@ -16,7 +19,26 @@ public class Polynom {
         return a*Math.pow(x,exp);
     }
 
-    public String getString(){
-        return a+"*x^"+exp;
+    public String getString() {
+        if (a == 0) {
+            return "";
+        } else if (exp == 1) {
+            return a+"x";
+        } else if (exp == 0) {
+            return a+"";
+        }
+        return a+"x^"+exp;
+    }
+    public double getA(){
+        return a;
+    }
+    public double getExp(){return exp;}
+
+    private static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        BigDecimal bd = new BigDecimal(Double.toString(value));
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 }
