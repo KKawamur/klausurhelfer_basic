@@ -1,17 +1,18 @@
 package MainWindow;
 
+import FunktionHandler.ButtonHandler;
 import Panels.Graphen.LeftPanel.LeftPanel;
 import Panels.Graphen.MidPanel.MidPanel;
+import Panels.Graphen.RightPanel.RightPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MainWindow extends JFrame {
 
-    JPanel leftPanel, midPanel, rightPanel;
-
+    LeftPanel leftPanel;
+    MidPanel midPanel;
+    RightPanel rightPanel;
 
 //    class ComboBoxListener implements ActionListener{
 //        public void actionPerformed(ActionEvent e) {
@@ -51,7 +52,18 @@ public class MainWindow extends JFrame {
         setLayout(new FlowLayout());
         leftPanel = new LeftPanel();
         midPanel = new MidPanel();
-        rightPanel = new JPanel(new FlowLayout());
+        rightPanel = new RightPanel();
+
+        ButtonHandler buttonHandler = new ButtonHandler();
+        leftPanel.setButtonHandler(buttonHandler);
+        midPanel.setButtonHandler(buttonHandler);
+        rightPanel.setButtonHandler(buttonHandler);
+
+        buttonHandler.setLeftPanel(leftPanel);
+        buttonHandler.setMidPanel(midPanel);
+        buttonHandler.setRightPanel(rightPanel);
+
+
         add(leftPanel);
         add(midPanel);
         add(rightPanel);
@@ -68,4 +80,5 @@ public class MainWindow extends JFrame {
     public static void main(String[]args){
         MainWindow window = new MainWindow();
     }
+
 }

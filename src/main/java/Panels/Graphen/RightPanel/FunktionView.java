@@ -1,5 +1,6 @@
 package Panels.Graphen.RightPanel;
 
+import FunktionHandler.ButtonHandler;
 import Funktionen.Polynom;
 import Funktionen.PolynomFunktion;
 
@@ -8,6 +9,8 @@ import java.awt.*;
 
 public class FunktionView extends JPanel {
     private JLabel funktionsName;
+    ButtonHandler buttonHandler;
+
     public FunktionView(PolynomFunktion funktion, boolean first){
         setLayout(new FlowLayout());
         if (first){
