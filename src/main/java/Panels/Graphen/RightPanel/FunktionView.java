@@ -30,11 +30,12 @@ public class FunktionView extends JPanel {
             JTextField a = new JTextField(Double.toString(iPolynom.getA()));
             polynomPanel.add(a);
 
-            switch (Double.toString(iPolynom.getExp())){
-                case "0": {break;}
-                case "1": {
+            switch ((int) iPolynom.getExp()){
+                case 0: {break;}
+                case 1: {
                     JLabel x = new JLabel("x");
                     polynomPanel.add(x);
+                    break;
                 }
                 default: {
                     JLabel x = new JLabel("x^");

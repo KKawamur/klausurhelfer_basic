@@ -34,7 +34,6 @@ public class LeftPanel extends JPanel {
         funktionsTypMenu = new JList(funktionsTypen);
         addButton = new JButton("+");
         addButton.setActionCommand("AddFunktion");
-        addButton.addActionListener(buttonHandler);
 //        addButton.addActionListener(buttonListener);
         this.add(funktionsTypMenu);
         this.add(addButton);
@@ -48,12 +47,13 @@ public class LeftPanel extends JPanel {
 //        this.rightPanel = rightPanel;
 //    }
 
-    public String getFunktionsTyp() {
-        return funktionsTypMenu.getSelectedValue().toString();
+    public int getFunktionsTyp() {
+        return funktionsTypMenu.getSelectedIndex();
     }
 
     public void setButtonHandler(ButtonHandler buttonHandler) {
         this.buttonHandler = buttonHandler;
+        addButton.addActionListener(buttonHandler);
     }
 
     //    @Override

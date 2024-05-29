@@ -7,7 +7,7 @@ public class PolynomFunktion {
     private double scope;
     private Polynom[] polynome;
 
-    public PolynomFunktion(int grad, int scope){
+    public PolynomFunktion(int grad, double scope){
         this.grad = grad;
         this.scope = scope;
         polynome = new Polynom[grad+1];
@@ -54,6 +54,8 @@ public class PolynomFunktion {
     public Polynom[] getAllPolynomes(){
         return polynome;
     }
+
+
 
     public static void main(String[]args){
         PolynomFunktion polynomFunktion = new PolynomFunktion(5, 10);

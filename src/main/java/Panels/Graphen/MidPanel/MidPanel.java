@@ -42,4 +42,7 @@ public class MidPanel extends JPanel {
     public void setButtonHandler(ButtonHandler buttonHandler) {
         this.buttonHandler = buttonHandler;
     }
+    public MidPanelCanvas getMidPanelCanvas (){
+        return midPanelCanvas;
+    }
 }

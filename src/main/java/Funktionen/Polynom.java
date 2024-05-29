@@ -8,7 +8,7 @@ public class Polynom {
     private double exp;
 
     public Polynom(double a, double exp){
-        this.a = round(a, 3);
+        this.a = round(a, 1);
         if (exp < 0)
             this.exp = 0;
         else
